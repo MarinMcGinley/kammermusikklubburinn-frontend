@@ -15,23 +15,22 @@ export default function RootLayout({
 }>) {
   return (
     <html className="" lang="en">
-      <header className="min-h-screen min-w-screen px-96 bg-white text-black max-2xl:px-1">
+      <header className="min-h-screen min-w-screen px-96 bg-white text-black max-2xl:px-10">
         <div className="pt-8 pb-1 border-b-5">
-          <div className=" flex justify-between gap-50 max-2xl:gap-0">
-            <div className=" flex w-full">
-              <nav className="flex justify-between items-end grow text-l px-10 pb-1 max-2xl:items-center">
+          <div className=" flex justify-between gap-10 max-2xl:gap-0 max-2xl:flex-col-reverse max-xl:gap-1">
+            <div className=" flex grow-2">
+              <nav className="flex justify-between w-full items-end text-l px-10 pb-1 max-2xl:items-center max-xl:flex-col max-xl:gap-2">
                 <Link href="/">TÓNLEIKARAÐIR</Link>
                 <Link href="/composers">TÓNHÖFUNDAR</Link>
                 <Link href="/musicians">FLYTJENDUR</Link>
               </nav>
             </div>
-            <div className="mb-4 flex justify-end">
+            <div className="mb-4 flex grow-1 justify-end max-2xl:justify-center">
               <Image
                 src="/KAMMER_logo.png"
                 alt="Kammermusikklubburinn"
-                className="max-2xl:hidden"
-                width={300}
-                height={200}
+                width={318}
+                height={134}
                 priority
               />
             </div>
