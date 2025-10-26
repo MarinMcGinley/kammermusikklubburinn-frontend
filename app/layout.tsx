@@ -14,9 +14,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className="" lang="en">
-      <header className="min-h-screen min-w-screen px-96 bg-white text-black max-2xl:px-10">
-        <div className="pt-8 pb-1 border-b-5">
+    <html className="w-full m-0 p-0" lang="en">
+      <body className="min-h-screen min-w-screen px-96 bg-white text-black max-2xl:px-10">
+        <div className="pt-8 pb-1 border-b-5 mb-10">
           <div className=" flex justify-between gap-10 max-2xl:gap-0 max-2xl:flex-col-reverse max-xl:gap-1">
             <div className=" flex grow-2">
               <nav className="flex justify-between w-full items-end text-l px-10 pb-1 max-2xl:items-center max-xl:flex-col max-xl:gap-2">
@@ -39,9 +39,9 @@ export default function RootLayout({
             STOFNAÐUR 1957
           </div>
         </div>
-      </header>
 
-      <body>{children}</body>
+        {children}
+      </body>
     </html>
   );
 }
