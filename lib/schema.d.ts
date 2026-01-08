@@ -201,9 +201,9 @@ export interface paths {
                         [name: string]: unknown;
                     };
                     content: {
-                        "text/plain": components["schemas"]["StandAloneComposerDto"][];
-                        "application/json": components["schemas"]["StandAloneComposerDto"][];
-                        "text/json": components["schemas"]["StandAloneComposerDto"][];
+                        "text/plain": components["schemas"]["PagedResultDtoOfStandAloneComposerDto"];
+                        "application/json": components["schemas"]["PagedResultDtoOfStandAloneComposerDto"];
+                        "text/json": components["schemas"]["PagedResultDtoOfStandAloneComposerDto"];
                     };
                 };
             };
@@ -354,9 +354,9 @@ export interface paths {
                         [name: string]: unknown;
                     };
                     content: {
-                        "text/plain": components["schemas"]["ConcertDto"][];
-                        "application/json": components["schemas"]["ConcertDto"][];
-                        "text/json": components["schemas"]["ConcertDto"][];
+                        "text/plain": components["schemas"]["PagedResultDtoOfConcertDto"];
+                        "application/json": components["schemas"]["PagedResultDtoOfConcertDto"];
+                        "text/json": components["schemas"]["PagedResultDtoOfConcertDto"];
                     };
                 };
             };
@@ -395,9 +395,9 @@ export interface paths {
                         [name: string]: unknown;
                     };
                     content: {
-                        "text/plain": components["schemas"]["ConcertDto"][];
-                        "application/json": components["schemas"]["ConcertDto"][];
-                        "text/json": components["schemas"]["ConcertDto"][];
+                        "text/plain": components["schemas"]["PagedResultDtoOfConcertDto"];
+                        "application/json": components["schemas"]["PagedResultDtoOfConcertDto"];
+                        "text/json": components["schemas"]["PagedResultDtoOfConcertDto"];
                     };
                 };
             };
@@ -546,9 +546,9 @@ export interface paths {
                         [name: string]: unknown;
                     };
                     content: {
-                        "text/plain": components["schemas"]["ConcertSeasonDto"][];
-                        "application/json": components["schemas"]["ConcertSeasonDto"][];
-                        "text/json": components["schemas"]["ConcertSeasonDto"][];
+                        "text/plain": components["schemas"]["PagedResultDtoOfConcertSeasonDto"];
+                        "application/json": components["schemas"]["PagedResultDtoOfConcertSeasonDto"];
+                        "text/json": components["schemas"]["PagedResultDtoOfConcertSeasonDto"];
                     };
                 };
             };
@@ -699,9 +699,9 @@ export interface paths {
                         [name: string]: unknown;
                     };
                     content: {
-                        "text/plain": components["schemas"]["ConcertDto"][];
-                        "application/json": components["schemas"]["ConcertDto"][];
-                        "text/json": components["schemas"]["ConcertDto"][];
+                        "text/plain": components["schemas"]["PagedResultDtoOfConcertDto"];
+                        "application/json": components["schemas"]["PagedResultDtoOfConcertDto"];
+                        "text/json": components["schemas"]["PagedResultDtoOfConcertDto"];
                     };
                 };
             };
@@ -740,9 +740,9 @@ export interface paths {
                         [name: string]: unknown;
                     };
                     content: {
-                        "text/plain": components["schemas"]["PerformerDto"][];
-                        "application/json": components["schemas"]["PerformerDto"][];
-                        "text/json": components["schemas"]["PerformerDto"][];
+                        "text/plain": components["schemas"]["PagedResultDtoOfPerformerDto"];
+                        "application/json": components["schemas"]["PagedResultDtoOfPerformerDto"];
+                        "text/json": components["schemas"]["PagedResultDtoOfPerformerDto"];
                     };
                 };
             };
@@ -893,9 +893,9 @@ export interface paths {
                         [name: string]: unknown;
                     };
                     content: {
-                        "text/plain": components["schemas"]["ConcertDto"][];
-                        "application/json": components["schemas"]["ConcertDto"][];
-                        "text/json": components["schemas"]["ConcertDto"][];
+                        "text/plain": components["schemas"]["PagedResultDtoOfConcertDto"];
+                        "application/json": components["schemas"]["PagedResultDtoOfConcertDto"];
+                        "text/json": components["schemas"]["PagedResultDtoOfConcertDto"];
                     };
                 };
             };
@@ -934,9 +934,9 @@ export interface paths {
                         [name: string]: unknown;
                     };
                     content: {
-                        "text/plain": components["schemas"]["PieceDto"][];
-                        "application/json": components["schemas"]["PieceDto"][];
-                        "text/json": components["schemas"]["PieceDto"][];
+                        "text/plain": components["schemas"]["PagedResultDtoOfPieceDto"];
+                        "application/json": components["schemas"]["PagedResultDtoOfPieceDto"];
+                        "text/json": components["schemas"]["PagedResultDtoOfPieceDto"];
                     };
                 };
             };
@@ -1087,9 +1087,9 @@ export interface paths {
                         [name: string]: unknown;
                     };
                     content: {
-                        "text/plain": components["schemas"]["ConcertDto"][];
-                        "application/json": components["schemas"]["ConcertDto"][];
-                        "text/json": components["schemas"]["ConcertDto"][];
+                        "text/plain": components["schemas"]["PagedResultDtoOfConcertDto"];
+                        "application/json": components["schemas"]["PagedResultDtoOfConcertDto"];
+                        "text/json": components["schemas"]["PagedResultDtoOfConcertDto"];
                     };
                 };
             };
@@ -1180,6 +1180,51 @@ export interface components {
             performersInGroups?: unknown[];
             /** Format: int32 */
             id?: number;
+        };
+        PagedResultDtoOfConcertDto: {
+            /** Format: int32 */
+            pageIndex: number;
+            /** Format: int32 */
+            pageSize: number;
+            /** Format: int32 */
+            count: number;
+            data: components["schemas"]["ConcertDto"][];
+        };
+        PagedResultDtoOfConcertSeasonDto: {
+            /** Format: int32 */
+            pageIndex: number;
+            /** Format: int32 */
+            pageSize: number;
+            /** Format: int32 */
+            count: number;
+            data: components["schemas"]["ConcertSeasonDto"][];
+        };
+        PagedResultDtoOfPerformerDto: {
+            /** Format: int32 */
+            pageIndex: number;
+            /** Format: int32 */
+            pageSize: number;
+            /** Format: int32 */
+            count: number;
+            data: components["schemas"]["PerformerDto"][];
+        };
+        PagedResultDtoOfPieceDto: {
+            /** Format: int32 */
+            pageIndex: number;
+            /** Format: int32 */
+            pageSize: number;
+            /** Format: int32 */
+            count: number;
+            data: components["schemas"]["PieceDto"][];
+        };
+        PagedResultDtoOfStandAloneComposerDto: {
+            /** Format: int32 */
+            pageIndex: number;
+            /** Format: int32 */
+            pageSize: number;
+            /** Format: int32 */
+            count: number;
+            data: components["schemas"]["StandAloneComposerDto"][];
         };
         Performer: {
             name: string;
