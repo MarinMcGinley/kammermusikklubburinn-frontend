@@ -7,12 +7,12 @@ type ConcertDto = components["schemas"]["ConcertDto"];
 export default function Concert({ concert }: { concert: ConcertDto }) {
   return (
     <div className="flex flex-col gap-5">
-      <h3>{concert.description}</h3>
+      <h2>{concert.description}</h2>
       <p>Dagsetning tónleika: {format(concert.date, "PPP", { locale: is })}</p>
       <h4 className="">Efnisskrá:</h4>
       <div className="flex flex-col gap-10">
         {concert.piecesInConcert.map((pieceInConcert, idx) => (
-          <div key={idx} className="ml-5">
+          <div key={`piece-in-concert-${idx}`} className="ml-5">
             <h4 className="mb-2">
               {pieceInConcert.piece.title} -{" "}
               <span className="italic">
