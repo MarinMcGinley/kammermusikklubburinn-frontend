@@ -21,7 +21,7 @@ export const api = {
       return data;
     },
     getAll: async (
-      query: paths["/api/Concerts"]["get"]["parameters"]["query"]
+      query: paths["/api/ConcertSeasons"]["get"]["parameters"]["query"]
     ) => {
       const { data, error } = await client.GET("/api/ConcertSeasons", {
         params: { query },
@@ -68,7 +68,7 @@ export const api = {
       return data;
     },
     getAll: async (
-      query: paths["/api/Concerts"]["get"]["parameters"]["query"]
+      query: paths["/api/Composers"]["get"]["parameters"]["query"]
     ) => {
       const { data, error } = await client.GET("/api/Composers", {
         params: { query },
@@ -117,7 +117,7 @@ export const api = {
       return data;
     },
     getAll: async (
-      query: paths["/api/Concerts"]["get"]["parameters"]["query"]
+      query: paths["/api/Performers"]["get"]["parameters"]["query"]
     ) => {
       const { data, error } = await client.GET("/api/Performers", {
         params: { query },
@@ -164,7 +164,7 @@ export const api = {
       return data;
     },
     getAll: async (
-      query: paths["/api/Concerts"]["get"]["parameters"]["query"]
+      query: paths["/api/Pieces"]["get"]["parameters"]["query"]
     ) => {
       const { data, error } = await client.GET("/api/Pieces", {
         params: { query },
