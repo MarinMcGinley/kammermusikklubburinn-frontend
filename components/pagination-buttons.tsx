@@ -52,16 +52,16 @@ export default function PaginationButtons({
     replace(`${pathname}?${params.toString()}`);
   };
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between mb-4 mx-3">
       <button
-        className="disabled:text-slate-200 disabled:border-slate-200 border p-1 rounded-xs"
+        className="disabled:text-slate-200 disabled:border-slate-200 border py-1 px-2 rounded-xs"
         onClick={goBack}
         disabled={disabledBack}
       >
         Til baka
       </button>
       <button
-        className="disabled:text-slate-200 disabled:border-slate-200 border p-1 rounded-xs"
+        className="disabled:text-slate-200 disabled:border-slate-200 border py-1 px-2 rounded-xs"
         onClick={goForward}
         disabled={disabledForward}
       >
