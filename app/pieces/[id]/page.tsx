@@ -1,4 +1,4 @@
-import Composer from "@/components/composer";
+import Piece from "@/components/piece";
 import { api } from "@/lib/api";
 
 export default async function PiecePage({
@@ -7,9 +7,11 @@ export default async function PiecePage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const composer = await api.pieces.concerts({ path: { id: parseInt(id) } });
 
-  //   return <Composer composer={composer} />;
-  // TODO FINISH PIECES
-  return <p>PIECES HERE</p>;
+  const [concerts, piece] = await Promise.all([
+    api.pieces.concerts({ path: { id: parseInt(id) } }),
+    api.pieces.getById({ id: parseInt(id) }),
+  ]);
+
+  return <Piece piece={piece} concerts={concerts} />;
 }

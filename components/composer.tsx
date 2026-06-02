@@ -1,4 +1,5 @@
 import { components } from "@/lib/schema";
+import Link from "next/link";
 
 type ComposerDto = components["schemas"]["StandAloneComposerDto"];
 
@@ -9,7 +10,7 @@ export default function Composer({ composer }: { composer: ComposerDto }) {
       <div>
         {composer.pieces.map((piece) => (
           <div key={`piece-${piece.id}`} className="flex flex-col gap-5">
-            <p>{piece.title}</p>
+            <Link href={`/pieces/${piece.id}`}>{piece.title}</Link>
           </div>
         ))}
       </div>

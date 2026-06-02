@@ -21,13 +21,13 @@ export default function RootLayout({
             <div className=" flex grow-2">
               <nav className="flex justify-between w-full items-end text-l px-10 pb-1 max-2xl:items-center max-xl:flex-col max-xl:gap-2">
                 <Link href="/">TÓNLEIKARAÐIR</Link>
-                <Link href="/composers">TÓNHÖFUNDAR</Link>
-                <Link href="/musicians">FLYTJENDUR</Link>
+                <Link href="/composers">TÓNSKÁLD</Link>
+                <Link href="/performers">FLYTJENDUR</Link>
               </nav>
             </div>
             <div className="mb-4 flex grow-1 justify-end max-2xl:justify-center">
               <Image
-                src="/KAMMER_logo.png"
+                src="/KAMMER_reverse_logo.png"
                 alt="Kammermusikklubburinn"
                 width={318}
                 height={134}
