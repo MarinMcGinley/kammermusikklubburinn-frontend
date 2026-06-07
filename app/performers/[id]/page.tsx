@@ -1,6 +1,5 @@
 import Performer from "@/components/performer";
 import { api } from "@/lib/api";
-import { components } from "@/lib/schema";
 
 export default async function MusicianPage({
   params,
@@ -10,7 +9,7 @@ export default async function MusicianPage({
   const { id } = await params;
   const [performer, concerts] = await Promise.all([
     api.performers.getById({ id: parseInt(id) }),
-    api.performers.concerts({ path: { id: parseInt(id) } }),
+    api.performers.concerts({ path: { id: parseInt(id) }, query: { PageSize: 50 }   }),
   ]);
 
   return <Performer performer={performer} concerts={concerts} />;

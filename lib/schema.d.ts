@@ -1108,6 +1108,8 @@ export interface components {
     schemas: {
         Composer: {
             name: string;
+            firstName: string;
+            lastName: string;
             pieces?: components["schemas"]["Piece"][];
             /** Format: int32 */
             id?: number;
@@ -1145,6 +1147,10 @@ export interface components {
         };
         ConcertSeason: {
             title: string;
+            /** Format: date-time */
+            beginDate: string;
+            /** Format: date-time */
+            endDate: string;
             concerts?: components["schemas"]["Concert"][];
             /** Format: int32 */
             id?: number;
@@ -1153,9 +1159,14 @@ export interface components {
             /** Format: int32 */
             id?: number;
             title: string;
+            /** Format: date-time */
+            beginDate: string;
+            /** Format: date-time */
+            endDate: string;
         };
         CreateComposerDto: {
-            name: string;
+            firstName: string;
+            lastName?: string;
         };
         CreateConcertDto: {
             description?: string | null;
@@ -1166,6 +1177,10 @@ export interface components {
         };
         CreateConcertSeasonDto: {
             title: string;
+            /** Format: date-time */
+            beginDate: string;
+            /** Format: date-time */
+            endDate: string;
         };
         CreatePerformerDto: {
             name: string;
@@ -1297,7 +1312,8 @@ export interface components {
         UpdateComposerDto: {
             /** Format: int32 */
             id: number;
-            name: string;
+            firstName: string;
+            lastName?: string;
         };
         UpdateConcertDto: {
             /** Format: int32 */
@@ -1312,6 +1328,10 @@ export interface components {
             /** Format: int32 */
             id: number;
             title: string;
+            /** Format: date-time */
+            beginDate: string;
+            /** Format: date-time */
+            endDate: string;
         };
         UpdatePerformerDto: {
             /** Format: int32 */

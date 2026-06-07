@@ -38,10 +38,12 @@ export default function PaginationButtons({
     const params = new URLSearchParams(searchParams);
     const pageIndex = params.get("PageIndex");
 
+    // TODO: FIX THIS
+    // console.log({count, pageSize, pageIndex, remaining: count - Number(pageSize) * Number(pageIndex)});
     if (!pageIndex) {
       params.set("PageIndex", "2");
     } else if (
-      count - Number(pageSize) * Number(pageIndex) <
+      count - Number(pageSize) * Number(pageIndex) <=
       Number(pageSize)
     ) {
       setDisabledForward(true);
