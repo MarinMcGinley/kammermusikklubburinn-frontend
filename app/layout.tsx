@@ -20,7 +20,7 @@ export default function RootLayout({
           <div className="flex justify-between gap-10 max-2xl:gap-0 max-2xl:flex-col-reverse max-xl:gap-1">
             <div className=" flex grow-2">
               <nav className="flex justify-between w-full items-end text-l px-10 pb-1 max-2xl:items-center max-xl:flex-col max-xl:gap-2">
-                <Link href="/">TÓNLEIKARAÐIR</Link>
+                <Link href="/seasons">TÓNLEIKARAÐIR</Link>
                 <Link href="/composers">TÓNSKÁLD</Link>
                 <Link href="/performers">FLYTJENDUR</Link>
               </nav>

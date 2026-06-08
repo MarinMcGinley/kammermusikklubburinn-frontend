@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function PaginationButtons({
   count,
@@ -16,6 +16,13 @@ export default function PaginationButtons({
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
+
+  useEffect(() => {
+    if (!searchParams.get("PageIndex") || searchParams.get("PageIndex") === "1") {
+      setDisabledBack(true);
+      setDisabledForward(false);
+    }
+  }, [searchParams]);
 
   const goBack = () => {
     setDisabledForward(false);
@@ -38,19 +45,18 @@ export default function PaginationButtons({
     const params = new URLSearchParams(searchParams);
     const pageIndex = params.get("PageIndex");
 
-    // TODO: FIX THIS
-    // console.log({count, pageSize, pageIndex, remaining: count - Number(pageSize) * Number(pageIndex)});
     if (!pageIndex) {
       params.set("PageIndex", "2");
-    } else if (
-      count - Number(pageSize) * Number(pageIndex) <=
-      Number(pageSize)
-    ) {
-      setDisabledForward(true);
-      params.set("PageIndex", String(Number(pageIndex) + 1));
+      if (count - Number(pageSize) * 2 <= Number(pageSize)) {
+        setDisabledForward(true);
+      }
     } else {
       params.set("PageIndex", String(Number(pageIndex) + 1));
+      if (count - Number(pageSize) * (Number(pageIndex) + 1) <= Number(pageSize)) {
+        setDisabledForward(true);
+      }
     }
+
     replace(`${pathname}?${params.toString()}`);
   };
   return (
