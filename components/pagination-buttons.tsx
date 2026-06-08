@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function PaginationButtons({
   count,
@@ -16,6 +16,13 @@ export default function PaginationButtons({
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
+
+  useEffect(() => {
+    if (!searchParams.get("PageIndex") || searchParams.get("PageIndex") === "1") {
+      setDisabledBack(true);
+      setDisabledForward(false);
+    }
+  }, [searchParams]);
 
   const goBack = () => {
     setDisabledForward(false);
@@ -40,19 +47,20 @@ export default function PaginationButtons({
 
     if (!pageIndex) {
       params.set("PageIndex", "2");
-    } else if (
-      count - Number(pageSize) * Number(pageIndex) <
-      Number(pageSize)
-    ) {
-      setDisabledForward(true);
-      params.set("PageIndex", String(Number(pageIndex) + 1));
+      if (count - Number(pageSize) * 2 <= 0) {
+        setDisabledForward(true);
+      }
     } else {
       params.set("PageIndex", String(Number(pageIndex) + 1));
+      if (count - Number(pageSize) * (Number(pageIndex) + 1) <= 0) {
+        setDisabledForward(true);
+      }
     }
+
     replace(`${pathname}?${params.toString()}`);
   };
   return (
-    <div className="flex justify-between mb-4 mx-3">
+    <div className="flex justify-between my-4 mx-3">
       <button
         className="disabled:text-slate-200 disabled:border-slate-200 border py-1 px-2 rounded-xs"
         onClick={goBack}

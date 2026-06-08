@@ -2,7 +2,7 @@ import PaginationButtons from "@/components/pagination-buttons";
 import { api } from "@/lib/api";
 import Link from "next/link";
 
-export default async function ComposersPage(props: {
+export default async function PerformersPage(props: {
   searchParams?: Promise<{
     PageIndex?: string;
     PageSize?: string;
@@ -12,7 +12,7 @@ export default async function ComposersPage(props: {
   const pageIndex = Number(searchParams?.PageIndex) || 1;
   const pageSize = Number(searchParams?.PageSize) || 35;
 
-  const { data: composers, count } = await api.composers.getAll({
+  const { data: composers, count } = await api.performers.getAll({
     PageIndex: pageIndex,
     PageSize: pageSize,
   });
@@ -22,7 +22,7 @@ export default async function ComposersPage(props: {
       <div>
         {composers.map((composer) => (
           <p key={composer.id}>
-            <Link href={`/composers/${composer.id}`}>{composer.lastName}, {composer.firstName }</Link>
+            <Link href={`/performers/${composer.id}`}>{composer.name}</Link>
           </p>
         ))}
       </div>
