@@ -47,12 +47,12 @@ export default function PaginationButtons({
 
     if (!pageIndex) {
       params.set("PageIndex", "2");
-      if (count - Number(pageSize) * 2 <= Number(pageSize)) {
+      if (count - Number(pageSize) * 2 <= 0) {
         setDisabledForward(true);
       }
     } else {
       params.set("PageIndex", String(Number(pageIndex) + 1));
-      if (count - Number(pageSize) * (Number(pageIndex) + 1) <= Number(pageSize)) {
+      if (count - Number(pageSize) * (Number(pageIndex) + 1) <= 0) {
         setDisabledForward(true);
       }
     }
@@ -60,7 +60,7 @@ export default function PaginationButtons({
     replace(`${pathname}?${params.toString()}`);
   };
   return (
-    <div className="flex justify-between mb-4 mx-3">
+    <div className="flex justify-between my-4 mx-3">
       <button
         className="disabled:text-slate-200 disabled:border-slate-200 border py-1 px-2 rounded-xs"
         onClick={goBack}

@@ -22,7 +22,7 @@ export default async function ComposersPage(props: {
       <div>
         {composers.map((composer) => (
           <p key={composer.id}>
-            <Link href={`/composers/${composer.id}`}>{composer.name}</Link>
+            <Link href={`/composers/${composer.id}`}>{composer.lastName}, {composer.firstName }</Link>
           </p>
         ))}
       </div>

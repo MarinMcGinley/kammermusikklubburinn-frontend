@@ -1308,6 +1308,8 @@ export interface components {
             id?: number;
             name: string;
             pieces: components["schemas"]["ComposerPieceDto"][];
+            lastName: string;
+            firstName: string;
         };
         UpdateComposerDto: {
             /** Format: int32 */
