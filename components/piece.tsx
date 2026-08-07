@@ -39,7 +39,7 @@ export default function Piece({
             {concert.piecesInConcert
               .filter((p) => p.piece.id === piece.id)[0]
               ?.performers.map((performer, idx) => (
-                <Link key={`performer-${idx}`} href={`/musicians/${performer.id}`}>
+                <Link key={`performer-${idx}`} href={`/performers/${performer.id}`}>
                   <p>
                     {performer.name}
                     {", "}
